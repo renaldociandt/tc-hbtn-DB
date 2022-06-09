@@ -2,11 +2,11 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
-public class ConectDb {
-    public static void connect() {
+public class ConnectionSQLite {
+    public static void initConnection() {
         Connection conn = null;
         try {
-            String url = "jdbc:sqlite:database_test.db";
+            String url = "jdbc:sqlite:sqlite_database_2022.db";
             conn = DriverManager.getConnection(url);
             System.out.println("Connection to SQLite has been established.");
         } catch (SQLException e) {
@@ -22,6 +22,6 @@ public class ConectDb {
         }
     }
     public static void main(String[] args) {
-        connect();
+        initConnection();
     }
 }
