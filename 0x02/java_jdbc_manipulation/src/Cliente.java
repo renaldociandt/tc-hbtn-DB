@@ -10,11 +10,11 @@ public class Cliente {
     public Cliente() {
     }
 
-    public Cliente(Integer id, String nome, Integer idade, String CPF, String RG) {
+    public Cliente(Integer id, String nome, Integer idade, String cpf, String RG) {
         this.id = id;
         this.nome = nome;
         this.idade = idade;
-        this.CPF = CPF;
+        this.cpf = cpf;
         this.RG = RG;
     }
 
@@ -43,11 +43,11 @@ public class Cliente {
     }
 
     public String getCPF() {
-        return CPF;
+        return cpf;
     }
 
     public void setCPF(String CPF) {
-        this.CPF = CPF;
+        this.cpf = CPF;
     }
 
     public String getRG() {
