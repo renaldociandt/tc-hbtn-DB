@@ -10,7 +10,7 @@ public class ClienteDAOImpl implements ClienteDAO {
             try {
                 conn = DriverManager.getConnection(urlConexao);
             } catch (SQLException e) {
-                throw new DbException(e.getMessage());
+                System.err.println(e.getMessage() + "Errouuuu");
             }
         }
         return conn;
@@ -37,7 +37,7 @@ public class ClienteDAOImpl implements ClienteDAO {
 
             stm.executeUpdate("CREATE TABLE pessoa (" + "id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,"
                         + "nome VARCHAR (80) NOT NULL," + "idade INTEGER NOT NULL," + "cpf VARCHAR (50) NOT NULL," + "RG VARCHAR (50) NOT NULL)");
-            conn.close();
+            //conn.close();
         }
         catch (SQLException e){
             e.printStackTrace();
@@ -57,15 +57,16 @@ public class ClienteDAOImpl implements ClienteDAO {
                         + "(?, ?, ?, ?)");
 
             st.setString(1, cliente.getNome());
-            st.setInt(2, cliente.getId());
+            st.setInt(2, cliente.getIdade());
             st.setString(3, cliente.getCpf());
             st.setString(4, cliente.getRG());
 
             st.executeUpdate();
-            closeConnect();
+            //closeConnect();
         }
         catch (SQLException e){
-            e.printStackTrace();
+            System.err.println(e.getMessage() + " cai aqui");
+            //e.printStackTrace();
         }
 
     }
@@ -78,7 +79,7 @@ public class ClienteDAOImpl implements ClienteDAO {
             conn = connect(urlConexao);
             st = conn.createStatement();
             st.executeQuery(  "SELECT * FROM pessoa");
-            closeConnect();
+            //closeConnect();
         }
         catch (SQLException e){
             e.printStackTrace();
@@ -94,7 +95,7 @@ public class ClienteDAOImpl implements ClienteDAO {
         try {
             conn = connect(urlConexao);
             st = conn.prepareStatement(
-                    "UPADATE pessoa "
+                    "UPDATE pessoa "
                             + "SET nome = ?, idade = ? "
                             + "WHERE "
                             + "id = ?");
@@ -105,7 +106,7 @@ public class ClienteDAOImpl implements ClienteDAO {
 
 
             st.executeUpdate();
-            closeConnect();
+           // closeConnect();
         }
         catch (SQLException e){
             e.printStackTrace();
@@ -124,10 +125,10 @@ public class ClienteDAOImpl implements ClienteDAO {
                             + "WHERE "
                             + "id = ?");
 
-            st.setInt(3, id);
+            st.setInt(1, id);
 
             st.executeUpdate();
-            closeConnect();
+           // closeConnect();
         }
         catch (SQLException e){
             e.printStackTrace();
