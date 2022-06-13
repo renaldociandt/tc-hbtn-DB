@@ -1,11 +1,10 @@
-import java.io.Serializable;
 
-public class Cliente implements Serializable {
+public class Cliente {
 
     private Integer id;
     private String nome;
     private Integer idade;
-    private String CPF;
+    private String cpf;
     private String RG;
 
     public Cliente() {
