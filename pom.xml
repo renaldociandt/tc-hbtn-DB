@@ -4,8 +4,10 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>groupId</groupId>
-    <artifactId>tc-hbtn-DB</artifactId>
+    <groupId>com.techcamps.cadastros</groupId>
+    <artifactId>administrativo-api</artifactId>
+    <name>Projeto Admin Demo</name>
+    <description>Projeto Administrativo para cadastros de Clientes e Produtos usando Hibernate e JPA</description>
     <version>1.0-SNAPSHOT</version>
 
     <properties>
@@ -19,6 +21,28 @@
             <artifactId>sqlite-jdbc</artifactId>
             <version>3.8.11.1</version>
         </dependency>
+
+        <!-- https://mvnrepository.com/artifact/org.hibernate/hibernate-core -->
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-core</artifactId>
+            <version>5.4.12.Final</version>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/org.hibernate/hibernate-entitymanager -->
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-entitymanager</artifactId>
+            <version>5.4.12.Final</version>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/com.github.gwenn/sqlite-dialect -->
+        <dependency>
+            <groupId>com.github.gwenn</groupId>
+            <artifactId>sqlite-dialect</artifactId>
+            <version>0.1.2</version>
+        </dependency>
+
     </dependencies>
 
 
